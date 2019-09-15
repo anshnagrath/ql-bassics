@@ -1,0 +1,27 @@
+{
+  "name": "graphbassics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshnagrath/ql-bassics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshnagrath/ql-bassics/issues"
+  },
+  "homepage": "https://github.com/anshnagrath/ql-bassics#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "graphql-yoga": "^1.14.10",
+    "nodemon": "^1.19.2"
+  }
+}
