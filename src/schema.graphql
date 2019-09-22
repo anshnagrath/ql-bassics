@@ -1,0 +1,79 @@
+type Query {
+   me: User!
+   greeting(name:String):String!
+   users(input:String):[User!]!
+   searchPost(query:String):[Post!]!
+   coments:[Comment!]!
+}
+type Mutation{
+    createUser(data:createUserInput!):User!
+    createPost(data:createPostInput!):Post!
+    createComment(data:createCommentInput!):Comment!
+    updateUser(id:ID!,data:updateUSerInput!):User!
+    updatePost(id:ID!,data:updatePostInput!):Post!
+    updateComment(id:ID!,data:updateCommentInput!):Comment!
+    deleteUser(id:ID!):User!
+    deletePost(id:ID!):Post!
+    title:String!
+    body:String!
+    published:Boolean!
+    author:User!
+}
+type Subscription{
+    count:Int!
+    comments(PostId:ID!):Comment!
+}
+
+
+input updatePostInput{
+    title:String
+    body:String
+    published:Boolean
+}
+input updateCommentInput{
+        text:String
+}
+input updateUSerInput{
+        name:String
+        email:String
+        age:String
+}
+input createPostInput{
+    title:String!,
+    body:String!,
+    published:Boolean!,
+    author:ID!
+
+}
+input createCommentInput{
+    text:String!,
+    author:ID!,
+    post:ID!  
+
+}
+input createUserInput{
+    name:String,
+    email:String,
+    age:String
+}
+type Comment{
+     id:ID!
+     text:String!,
+     author:ID!
+    
+}
+type Post{
+        id:ID!,
+        title:String!,
+        body:String!,
+        published:Boolean!,
+        author:ID!
+}
+type User {
+    id:ID!
+    name:String!
+    email:String!
+    age:Int
+    coments:[Comment!]!
+    post:[Post!]
+}
